@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react"; // 👈 1. Add useEffect, useRef
+import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null); // 👈 2. Create the ref
+  const navRef = useRef<HTMLElement>(null);
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -16,9 +16,27 @@ export default function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
-  const closeMenu = () => setIsOpen(false);
+  // 👇 Smooth scroll + close menu after navigation
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
 
-  // 👈 3. Add this useEffect — closes menu on outside click
+    if (targetElement) {
+      // Close menu first
+      setIsOpen(false);
+
+      // Wait for menu close animation, then scroll
+      setTimeout(() => {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 300); // Matches the menu close animation duration
+    }
+  };
+
+  // Close menu on outside click + Escape key
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -26,18 +44,22 @@ export default function Navbar() {
       }
     };
 
-    // Only listen when menu is open (better performance)
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen]);
 
   return (
-    // 👈 4. Attach the ref here
     <nav
       ref={navRef}
       className="fixed top-0 z-50 w-full backdrop-blur-md bg-bg/70 border-b border-white/5"
@@ -46,7 +68,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="#hero"
-          onClick={closeMenu}
+          onClick={(e) => handleLinkClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, "#hero")}
           className="text-xl font-bold text-accent-light hover:-translate-y-0.5 transition-transform duration-300"
         >
           EM
@@ -58,6 +80,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className="relative hover:text-accent-light hover:-translate-y-0.5 transition-all duration-300 after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
@@ -68,7 +91,7 @@ export default function Navbar() {
         {/* Desktop Social Icons */}
         <div className="hidden md:flex gap-3">
           <a
-            href="https://github.com/EzzMoharm"
+            href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -77,7 +100,7 @@ export default function Navbar() {
             <FaGithub size={18} />
           </a>
           <a
-            href="https://www.linkedin.com/in/ezz-muharram-215365326/"
+            href="https://linkedin.com/in/yourusername"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -112,7 +135,7 @@ export default function Navbar() {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={closeMenu}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -125,7 +148,7 @@ export default function Navbar() {
               {/* Mobile Social Icons */}
               <div className="flex gap-4 pt-4 border-t border-white/5">
                 <a
-                  href="https://github.com/EzzMoharm"
+                  href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -134,7 +157,7 @@ export default function Navbar() {
                   <FaGithub size={20} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ezz-muharram-215365326/"
+                  href="https://linkedin.com/in/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
