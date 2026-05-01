@@ -16,27 +16,23 @@ export default function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
-  // 👇 Smooth scroll + close menu after navigation
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      // Close menu first
       setIsOpen(false);
 
-      // Wait for menu close animation, then scroll
       setTimeout(() => {
         targetElement.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-      }, 300); // Matches the menu close animation duration
+      }, 300);
     }
   };
 
-  // Close menu on outside click + Escape key
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -113,7 +109,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-white/5 transition"
+          className="md:hidden p-2 rounded-lg hover:bg-white/5 active:scale-95 transition-all duration-300"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -139,7 +135,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="text-base hover:text-accent-light transition-colors duration-300 py-2"
+                  className="relative inline-block w-fit text-base hover:text-accent-light hover:-translate-y-0.5 active:scale-95 transition-all duration-300 py-2 after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
                 </motion.a>
@@ -152,7 +148,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="p-2 rounded-lg hover:bg-[#f0f6fc]/10 hover:text-[#f0f6fc] transition-all duration-300"
+                  className="p-2 rounded-lg hover:bg-[#f0f6fc]/10 hover:text-[#f0f6fc] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   <FaGithub size={20} />
                 </a>
@@ -161,7 +157,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="p-2 rounded-lg hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] transition-all duration-300"
+                  className="p-2 rounded-lg hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   <FaLinkedin size={20} />
                 </a>
