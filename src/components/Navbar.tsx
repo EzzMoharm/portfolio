@@ -135,7 +135,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="relative inline-block w-fit text-base hover:text-accent-light hover:-translate-y-0.5 active:scale-95 transition-all duration-300 py-2 after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative inline-block w-fit text-base hover:text-accent-light hover:-translate-y-0.5 active:scale-95 transition-all duration-300 py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
                 </motion.a>
