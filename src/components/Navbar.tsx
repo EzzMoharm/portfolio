@@ -87,7 +87,7 @@ export default function Navbar() {
         {/* Desktop Social Icons */}
         <div className="hidden md:flex gap-3">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/EzzMoharm"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -96,7 +96,7 @@ export default function Navbar() {
             <FaGithub size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/ezz-muharram-215365326/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -144,7 +144,7 @@ export default function Navbar() {
               {/* Mobile Social Icons */}
               <div className="flex gap-4 pt-4 border-t border-white/5">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/EzzMoharm"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -153,7 +153,7 @@ export default function Navbar() {
                   <FaGithub size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/ezz-muharram-215365326/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
