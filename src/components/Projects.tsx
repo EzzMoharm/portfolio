@@ -6,7 +6,6 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A modern, full-stack e-commerce app with Stripe payments, server actions, and Cache Components.",
-    tech: ["Next.js 16", "TypeScript", "Tailwind v4", "Stripe"],
     github: "https://github.com/yourusername/ecommerce",
     demo: "https://demo.example.com",
   },
@@ -14,7 +13,6 @@ const projects = [
     title: "AI Chat Dashboard",
     description:
       "Real-time AI chat interface with streaming responses and conversation history.",
-    tech: ["React 19", "OpenAI API", "Server Components"],
     github: "https://github.com/yourusername/ai-chat",
     demo: "https://demo.example.com",
   },
@@ -22,7 +20,6 @@ const projects = [
     title: "Design System",
     description:
       "Reusable component library with Storybook documentation and full a11y support.",
-    tech: ["React", "Tailwind v4", "Storybook"],
     github: "https://github.com/yourusername/design-system",
     demo: "https://demo.example.com",
   },
@@ -43,7 +40,6 @@ export default function Projects() {
               className="group p-6 bg-surface rounded-xl border border-white/5 hover:border-accent/50 transition-all hover:-translate-y-1"
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="text-accent text-4xl">📁</div>
                 <div className="flex gap-3">
                   <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
                     <FaGithub size={18} className="hover:text-accent-light" />
@@ -58,9 +54,6 @@ export default function Projects() {
               </h3>
               <p className="text-muted text-sm mb-4 leading-relaxed">{p.description}</p>
               <ul className="flex flex-wrap gap-2 font-mono text-xs text-muted">
-                {p.tech.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
               </ul>
             </article>
           ))}

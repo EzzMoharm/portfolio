@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TbFileCvFilled } from "react-icons/tb";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -23,7 +24,7 @@ export default function Hero() {
           transition={{ delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
-          Ezz Muharram.
+          Ezz Muharram  
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +70,15 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#0A66C2] hover:text-[#0A66C2] rounded-lg font-medium transition"          >
             <FaLinkedin size={16} /> LinkedIn
+          </a>          
+          <a
+            href="https://drive.google.com/file/d/1X0znAZJrrDXq2NlhvxBUcKIiaetBArkb/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#e2c957] hover:text-[#b9b135] rounded-lg font-medium transition"          >
+            <TbFileCvFilled size={20} /> My CV
           </a>
+
         </motion.div>
       </div>
     </section>

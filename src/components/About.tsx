@@ -11,7 +11,7 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-8 text-muted leading-relaxed">
           <div className="md:col-span-2 space-y-4">
             <p>
-              Hello! I&apos;m Ezz, a frontend developer based in Mansourah. I
+              Hello! I&apos;m Ezz, a frontend developer live in Egypt. I
               enjoy creating things that live on the internet — whether that be
               websites, applications, or anything in between.
             </p>
@@ -21,7 +21,7 @@ export default function About() {
               recently:
             </p>
             <ul className="grid grid-cols-2 gap-2 font-mono text-sm">
-              {["JavaScript", "React", "Tailwind", "Node.js", "MongoDB"].map((t) => (
+              {["JavaScript", "Tailwind", "React", "Next.js", "Node.js", "MongoDB"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="text-accent">▹</span> {t}
                 </li>
