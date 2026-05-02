@@ -72,7 +72,7 @@ export default function Hero() {
             <FaLinkedin size={16} /> LinkedIn
           </a>          
           <a
-            href="https://drive.google.com/file/d/1X0znAZJrrDXq2NlhvxBUcKIiaetBArkb/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1F2M54wB_MgUzDOmTebZCIY1pOSUDAQY7/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#e2c957] hover:text-[#b9b135] rounded-lg font-medium transition"          >
