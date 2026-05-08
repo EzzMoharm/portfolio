@@ -42,10 +42,10 @@ export default function Projects() {
               <div className="flex justify-between items-start mb-4">
                 <div className="flex gap-3">
                   <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
-                    <FaGithub size={18} className="hover:text-accent-light" />
+                    {/* <FaGithub size={18} className="hover:text-accent-light" /> */}
                   </a>
                   <a href={p.demo} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                    <ExternalLink size={18} className="hover:text-accent-light" />
+                    {/* <ExternalLink size={18} className="hover:text-accent-light" /> */}
                   </a>
                 </div>
               </div>
