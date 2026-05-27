@@ -24,7 +24,7 @@ export default function Hero() {
           transition={{ delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
-          Ezz Muharram  
+          Ezz Muharram
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -70,9 +70,9 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#0A66C2] hover:text-[#0A66C2] rounded-lg font-medium transition"          >
             <FaLinkedin size={16} /> LinkedIn
-          </a>          
+          </a>
           <a
-            href="https://drive.google.com/file/d/1F2M54wB_MgUzDOmTebZCIY1pOSUDAQY7/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1CsNGXR61n5XgkI9G5lxtgF7WRrXeY2tl/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#e2c957] hover:text-[#b9b135] rounded-lg font-medium transition"          >
