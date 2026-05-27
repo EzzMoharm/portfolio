@@ -21,7 +21,7 @@ export default function About() {
               recently:
             </p>
             <ul className="grid grid-cols-2 gap-2 font-mono text-sm">
-              {["JavaScript", "Tailwind", "React", "Next.js", "Node.js", "MongoDB"].map((t) => (
+              {["JavaScript", "Tailwind CSS", "React.js", "Next.js", "Typesctipt"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="text-accent">▹</span> {t}
                 </li>
